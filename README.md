@@ -139,6 +139,7 @@ python src/predict.py \
 
 
 ## ⚙️ 主要参数配置
+```bash
 参数	默认值	说明
 --max_length	128	序列最大长度（长于截断，短则填充）
 --input_dim	480	ESM‑2_t12 的输出维度
@@ -148,11 +149,11 @@ python src/predict.py \
 --lr	5e-4	初始学习率
 --weight_decay	1e-4	L2 正则化系数
 完整参数请查看各脚本的 argparse 定义。
-
-
+```
 
 
 ## 📝 依赖环境
+```bash
 Python 3.8+
 
 PyTorch 1.9+
@@ -160,12 +161,7 @@ PyTorch 1.9+
 Transformers 4.20+
 
 其他见 requirements.txt
-
-
-
-
-
-
+```
 
 
 
