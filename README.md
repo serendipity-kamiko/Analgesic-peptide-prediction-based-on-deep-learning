@@ -159,10 +159,7 @@ Python 3.8+
 PyTorch 1.9+
 
 Transformers 4.20+
-
-其他见 requirements.txt
 ```
-
-
+其他见 requirements.txt
 
 
