@@ -46,6 +46,7 @@ source venv/bin/activate   # Linux/Mac
 
 # 安装依赖
 pip install -r requirements.txt
+```
 
 
 ### 2. 准备原始数据
@@ -59,14 +60,15 @@ negative100.fasta（负样本，标签为 0）
 
 
 ### 3. 划分数据集
-bash
+```bash
 cd src/data
 python split_data.py
+```
 输出文件将保存在 data/processed/ 下：train.fasta, val.fasta, test.fasta。
 
 
 ### 4. 提取 ESM‑2 特征
-bash
+```bash
 cd ../features
 python feature.py \
     --input_dir ../../data/processed \
@@ -74,6 +76,7 @@ python feature.py \
     --feature_type per_residue \
     --batch_size 8 \
     --device cuda   # 若无 GPU 可改为 cpu
+```
 参数说明：
 
 --input_dir：包含 train/val/test.fasta 的目录
@@ -88,7 +91,7 @@ python feature.py \
 
 
 ### 5. 训练模型
-bash
+```bash
 cd ../..
 python src/train.py \
     --features_dir data/features/per_residue \
@@ -98,6 +101,7 @@ python src/train.py \
     --lr 5e-4 \
     --max_length 128 \
     --device cuda
+```
 训练过程中会：
 
 自动计算类别权重（平衡正负样本）
@@ -112,12 +116,13 @@ python src/train.py \
 ### 6. 评估与预测
 使用训练好的最佳模型对测试集进行评估：
 
-bash
+```bash
 python src/predict.py \
     --model_path checkpoints/best_model_epoch14.pth \
     --features_dir data/features/per_residue \
     --max_length 128 \
     --device cuda
+```
 该脚本会：
 
 输出测试集的整体准确率、各类别准确率
