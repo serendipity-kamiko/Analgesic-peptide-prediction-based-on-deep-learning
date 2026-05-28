@@ -48,7 +48,7 @@ source venv/bin/activate   # Linux/Mac
 pip install -r requirements.txt
 
 
-2. 准备原始数据
+### 2. 准备原始数据
 将您的正负样本 FASTA 文件放入 data/raw/ 目录：
 
 positive100.fasta（正样本，标签为 1）
@@ -58,14 +58,14 @@ negative100.fasta（负样本，标签为 0）
 文件编码需为 UTF‑16（如原脚本所述）。如果为 UTF‑8，请修改 split_data.py 中的 encoding 参数。
 
 
-3. 划分数据集
+### 3. 划分数据集
 bash
 cd src/data
 python split_data.py
 输出文件将保存在 data/processed/ 下：train.fasta, val.fasta, test.fasta。
 
 
-4. 提取 ESM‑2 特征
+### 4. 提取 ESM‑2 特征
 bash
 cd ../features
 python feature.py \
@@ -87,7 +87,7 @@ python feature.py \
 首次运行会从 HuggingFace 下载模型（约 140 MB），请保持网络畅通。
 
 
-5. 训练模型
+### 5. 训练模型
 bash
 cd ../..
 python src/train.py \
@@ -109,7 +109,7 @@ python src/train.py \
 训练结束后在测试集上评估并生成 training_history.png
 
 
-6. 评估与预测
+### 6. 评估与预测
 使用训练好的最佳模型对测试集进行评估：
 
 bash
@@ -129,7 +129,7 @@ python src/predict.py \
 如果要对单条序列进行预测，可以参考 predict.py 中的 predict_single() 方法。
 
 
-⚙️ 主要参数配置
+## ⚙️ 主要参数配置
 参数	默认值	说明
 --max_length	128	序列最大长度（长于截断，短则填充）
 --input_dim	480	ESM‑2_t12 的输出维度
@@ -143,7 +143,7 @@ python src/predict.py \
 
 
 
-📝 依赖环境
+## 📝 依赖环境
 Python 3.8+
 
 PyTorch 1.9+
