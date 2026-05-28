@@ -13,6 +13,7 @@
 - 支持 **per‑residue**（每个氨基酸一个向量）和 **global**（整个肽段平均池化）两种特征模式
 
 ## 📁 项目结构
+```bash
 .
 ├── data/ # 数据目录
 │ ├── raw/ # 原始 FASTA（正负样本）
@@ -31,6 +32,7 @@
 ├── checkpoints/ # 保存的模型权重（自动创建）
 ├── requirements.txt
 └── README.md
+```
 
 
 ## 🚀 快速开始
