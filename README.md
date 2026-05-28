@@ -19,16 +19,18 @@
 │ ├── processed/ # 划分后的 train/val/test.fasta
 │ └── features/ # 提取的 ESM‑2 特征（pickle/npy）
 ├── src/ # 源代码
-│ ├── split_data.py # 数据集划分
-│ └── dataset.py # PyTorch Dataset
-│ └── feature.py # ESM‑2 特征提取
-│ └── model.py # 模型定义
+│ ├── data/
+│ │ ├── split_data.py # 数据集划分
+│ │ └── dataset.py # PyTorch Dataset
+│ ├── features/
+│ │ └── feature.py # ESM‑2 特征提取
+│ ├── models/
+│ │ └── model.py # 模型定义
 │ ├── train.py # 训练脚本
 │ └── predict.py # 预测与评估
 ├── checkpoints/ # 保存的模型权重（自动创建）
 ├── requirements.txt
 └── README.md
-
 
 
 ## 🚀 快速开始
