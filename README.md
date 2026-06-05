@@ -65,8 +65,7 @@ negative100.fasta（负样本，标签为 0）
 
 ### 3. 划分数据集
 ```bash
-cd src/data
-python split_data.py
+python src/data/split_data.py
 ```
 输出文件将保存在 data/processed/ 下：train.fasta, val.fasta, test.fasta。
 
