@@ -76,6 +76,7 @@ cd src/features
 python feature.py \
     --input_dir ../../data/processed \
     --output_dir ../../data/features/per_residue \
+    --model_name ../../esm_model/esm2_t12_35M_UR50D
     --feature_type per_residue \
     --batch_size 8 \
     --device cuda   # 若无 GPU 可改为 cpu
