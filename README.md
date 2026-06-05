@@ -72,7 +72,7 @@ python src/data/split_data.py
 
 ### 4. 提取 ESM‑2 特征
 ```bash
-cd ../features
+cd src/features
 python feature.py \
     --input_dir ../../data/processed \
     --output_dir ../../data/features/per_residue \
